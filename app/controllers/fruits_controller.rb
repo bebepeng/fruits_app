@@ -14,6 +14,6 @@ class FruitsController < ApplicationController
   end
 
   def read
-    @fruit= Fruit.where(:id => params[:id])
+    @fruit= Fruit.where(:id => params[:id]).first
   end
 end
