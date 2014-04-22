@@ -1,0 +1,7 @@
+<ul>
+  <% Fruit.all.each do |fruit|%>
+  <li><%= fruit[:name] %> - <%= fruit[:description]%></li>
+  <% end %>
+</ul>
+
+<a href="/fruits/new">Add Fruit</a>
