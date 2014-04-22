@@ -44,4 +44,16 @@ feature "Fruits App" do
 
     expect(page).to have_content 'Red and Round'
   end
+  scenario "Users can edit a specific fruit" do
+    visit '/fruits'
+    click_on 'Add Fruit'
+    fill_in 'name', :with => 'Apple'
+    fill_in 'description', :with => 'Red and Shiny'
+    click_on 'Add Fruit'
+
+    click_on 'View Details'
+    click_on 'Delete Fruit'
+
+    expect(page).to_not have_content 'Apple'
+  end
 end

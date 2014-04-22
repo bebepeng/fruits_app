@@ -4,3 +4,8 @@
 <form action="/fruits/<%= @fruit[:id] %>/edit" method="get">
   <input type="submit" value="Edit Details">
 </form>
+
+<form action="/fruits/<%= @fruit[:id] %>" method="post">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="Delete Fruit">
+</form>

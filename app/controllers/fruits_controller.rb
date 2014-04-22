@@ -26,4 +26,10 @@ class FruitsController < ApplicationController
 
     redirect_to "/fruits/#{params[:id]}"
   end
+
+  def delete
+    Fruit.delete(params[:id])
+
+    redirect_to '/fruits'
+  end
 end
