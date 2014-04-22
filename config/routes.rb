@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   post '/fruits', :to => 'fruits#create'
 
   get '/fruits/:id', :to => 'fruits#read'
+  get '/fruits/:id/edit', :to => 'fruits#edit'
+
+  put '/fruits/:id', :to => 'fruits#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

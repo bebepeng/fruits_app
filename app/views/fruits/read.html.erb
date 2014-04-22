@@ -1,2 +1,6 @@
-<h1><%=@fruit[:name]%></h1>
+<h1><%= @fruit[:name] %></h1>
 <h2> Description: <%= @fruit[:description] %></h2>
+
+<form action="/fruits/<%= @fruit[:id] %>/edit" method="get">
+  <input type="submit" value="Edit Details">
+</form>
