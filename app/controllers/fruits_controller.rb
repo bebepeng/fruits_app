@@ -12,4 +12,8 @@ class FruitsController < ApplicationController
 
     redirect_to '/fruits'
   end
+
+  def read
+    @fruit= Fruit.where(:id => params[:id])
+  end
 end
