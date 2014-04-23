@@ -1,8 +1,10 @@
 <h1>Fruits</h1>
-<ul>
-  <% @fruits.each do |fruit| %>
-    <li><%= fruit[:name] %> <a href="/fruits/<%= fruit[:id] %>">View Details</a></li>
-  <% end %>
-</ul>
+<div class="content">
+  <ul>
+    <% @fruits.each do |fruit| %>
+      <li><%= fruit[:name] %> <a href="/fruits/<%= fruit[:id] %>">View Details</a></li>
+    <% end %>
+  </ul>
 
-<a href="/fruits/new">Add Fruit</a>
+  <a href="/fruits/new">Add Fruit</a>
+</div>

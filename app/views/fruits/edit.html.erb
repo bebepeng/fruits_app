@@ -1,6 +1,8 @@
-<form action="/fruits/<%= @fruit[:id] %>" method="post">
-  <input type="hidden" name="_method" value="put"/>
-  <input type="text" name="name" value="<%= @fruit[:name] %>">
-  <input type="text" name="description" value="<%= @fruit[:description] %>">
-  <input type="submit" value="Update Details">
-</form>
+<div class="content">
+  <form action="/fruits/<%= @fruit[:id] %>" method="post">
+    <input type="hidden" name="_method" value="put"/>
+    <input type="text" name="name" value="<%= @fruit[:name] %>">
+    <input type="text" name="description" value="<%= @fruit[:description] %>">
+    <input type="submit" value="Update Details">
+  </form>
+</div>
