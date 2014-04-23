@@ -1,10 +1,19 @@
+<header>
+  <div class="header_container">
+    <div class="left_header">
+      <img src="/assets/oFruit.png">
+    </div>
+    <div class="right_header">
+      <a href="/">Home</a>
+    </div>
+  </div>
+</header>
+
 <h1><%= @fruit[:name] %></h1>
 <div class="content">
   <h2> Description: <%= @fruit[:description] %></h2>
 
-  <form action="/fruits/<%= @fruit[:id] %>/edit" method="get">
-    <input type="submit" value="Edit Details">
-  </form>
+  <a href="/fruits/<%= @fruit[:id] %>/edit">Edit Details</a>
 
   <form action="/fruits/<%= @fruit[:id] %>" method="post">
     <input type="hidden" name="_method" value="delete"/>

@@ -14,11 +14,11 @@ class FruitsController < ApplicationController
   end
 
   def read
-    @fruit = Fruit.where(:id => params[:id]).first
+    @fruit = Fruit.find(params[:id])
   end
 
   def edit
-    @fruit = Fruit.where(:id => params[:id]).first
+    @fruit = Fruit.find(params[:id])
   end
 
   def update
@@ -28,7 +28,7 @@ class FruitsController < ApplicationController
   end
 
   def delete
-    Fruit.delete(params[:id])
+    Fruit.find(params[:id]).destroy
 
     redirect_to '/fruits'
   end
