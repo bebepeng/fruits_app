@@ -11,18 +11,18 @@ feature "Fruits App" do
     click_on 'View Fruits'
 
     click_on 'Add Fruit'
-    fill_in 'name', :with => 'Banana'
-    fill_in 'description', :with => 'Yellow and Crescent Shaped'
-    click_on 'Add Fruit'
+    fill_in 'fruit_name', :with => 'Banana'
+    fill_in 'fruit_description', :with => 'Yellow and Crescent Shaped'
+    click_on 'Create Fruit'
 
     expect(page).to have_content 'Banana'
   end
   scenario "Users can view a specific fruit" do
     visit '/fruits'
     click_on 'Add Fruit'
-    fill_in 'name', :with => 'Apple'
-    fill_in 'description', :with => 'Red and Round'
-    click_on 'Add Fruit'
+    fill_in 'fruit_name', :with => 'Apple'
+    fill_in 'fruit_description', :with => 'Red and Round'
+    click_on 'Create Fruit'
 
     click_on 'View Details'
 
@@ -32,24 +32,24 @@ feature "Fruits App" do
   scenario "Users can edit a specific fruit" do
     visit '/fruits'
     click_on 'Add Fruit'
-    fill_in 'name', :with => 'Apple'
-    fill_in 'description', :with => 'Red and Shiny'
-    click_on 'Add Fruit'
+    fill_in 'fruit_name', :with => 'Apple'
+    fill_in 'fruit_description', :with => 'Red and Shiny'
+    click_on 'Create Fruit'
 
     click_on 'View Details'
 
     click_on 'Edit Details'
-    fill_in 'description', :with => 'Red and Round'
-    click_on 'Update Details'
+    fill_in 'fruit_description', :with => 'Red and Round'
+    click_on 'Update Fruit'
 
     expect(page).to have_content 'Red and Round'
   end
   scenario "Users can edit a specific fruit" do
     visit '/fruits'
     click_on 'Add Fruit'
-    fill_in 'name', :with => 'Apple'
-    fill_in 'description', :with => 'Red and Shiny'
-    click_on 'Add Fruit'
+    fill_in 'fruit_name', :with => 'Apple'
+    fill_in 'fruit_description', :with => 'Red and Shiny'
+    click_on 'Create Fruit'
 
     click_on 'View Details'
     click_on 'Delete Fruit'

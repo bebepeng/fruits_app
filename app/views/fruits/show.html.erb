@@ -13,10 +13,7 @@
 <div class="content">
   <h2> Description: <%= @fruit[:description] %></h2>
 
-  <a href="/fruits/<%= @fruit[:id] %>/edit">Edit Details</a>
+  <%= link_to "Edit Details", edit_fruit_path(@fruit) %><br>
 
-  <form action="/fruits/<%= @fruit[:id] %>" method="post">
-    <input type="hidden" name="_method" value="delete"/>
-    <input type="submit" value="Delete Fruit">
-  </form>
+  <%= link_to "Delete Fruit", fruit_path(@fruit), method: :delete, data: {confirm: "Are you sure?"} %>
 </div>

@@ -8,9 +8,12 @@ class FruitsController < ApplicationController
   end
 
   def create
-    Fruit.create(:name => params[:name], :description => params[:description])
-
-    redirect_to '/fruits'
+    @fruit = Fruit.new(:name => params[:fruit][:name], :description => params[:fruit][:description])
+    if @fruit.save
+      redirect_to Fruit
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,13 +25,16 @@ class FruitsController < ApplicationController
   end
 
   def update
-    Fruit.update(params[:id], :name => params[:name], :description => params[:description])
-
-    redirect_to "/fruits/#{params[:id]}"
+    @fruit = Fruit.find(params[:id])
+    if @fruit.update_attributes(:name => params[:fruit][:name], :description => params[:fruit][:description])
+      redirect_to @fruit
+    else
+      render :edit
+    end
   end
 
   def destroy
-    Fruit.find(params[:id]).destroy
+    Fruit.destroy(params[:id])
 
     redirect_to '/fruits'
   end
