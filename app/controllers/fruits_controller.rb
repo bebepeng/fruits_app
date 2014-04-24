@@ -4,7 +4,7 @@ class FruitsController < ApplicationController
   end
 
   def new
-
+    @fruit = Fruit.new
   end
 
   def create
