@@ -2,17 +2,7 @@ Rails.application.routes.draw do
 
   get '/', :to => 'welcome#index'
 
-  get '/fruits', :to => 'fruits#index'
-  get '/fruits/new', :to => 'fruits#new'
-
-  post '/fruits', :to => 'fruits#create'
-
-  get '/fruits/:id', :to => 'fruits#read'
-  get '/fruits/:id/edit', :to => 'fruits#edit'
-
-  put '/fruits/:id', :to => 'fruits#update'
-
-  delete '/fruits/:id', :to => 'fruits#delete'
+  resources :fruits
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

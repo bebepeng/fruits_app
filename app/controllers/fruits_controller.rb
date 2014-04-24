@@ -13,7 +13,7 @@ class FruitsController < ApplicationController
     redirect_to '/fruits'
   end
 
-  def read
+  def show
     @fruit = Fruit.find(params[:id])
   end
 
@@ -27,7 +27,7 @@ class FruitsController < ApplicationController
     redirect_to "/fruits/#{params[:id]}"
   end
 
-  def delete
+  def destroy
     Fruit.find(params[:id]).destroy
 
     redirect_to '/fruits'
